@@ -118,6 +118,18 @@ class BST:
         else:
             print (True)
             return
+
+    def __level(self,root):
+        if root is None:
+            return 0
+        else:
+            l = self.__level(root.left)
+            r = self.__level(root.right)
+            if l>r:
+                return l+1
+            else:
+                return r+1
+               
         
 
             
@@ -143,6 +155,8 @@ class BST:
         self.__find(self.root,val)
     def display(self):
         self.__Inorder(self.root)
+    def height(self):
+        print(self.__level(self.root))
 
 
 
@@ -160,6 +174,7 @@ r.insert(9)
 r.insert(12)
 r.display()
 r.Level_Order_Print()
+r.height()
 r.max()
 r.min()
 r.search(12)
@@ -168,6 +183,7 @@ r.remove(6)
 r.remove(4)
 print("")
 r.Level_Order_Print()
+r.height()
 
 
 
